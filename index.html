@@ -2141,12 +2141,21 @@ Timers:
                     '<li>Comprehensive: <strong>' + compRPS.toFixed(1) + ' RPS</strong> → Conservative: <strong>' + consRPS.toFixed(1) + ' RPS</strong> (× 0.7)</li>';
             }
             
-            // Comprehensive example
+            // Comprehensive example - Context aware based on mode
             if (document.getElementById('comprehensiveExample')) {
-                document.getElementById('comprehensiveExample').innerHTML = 
-                    '<li>VU: <strong>' + compVU.toLocaleString() + '</strong> | RT: <strong>' + rt + 'ms</strong> | Think: <strong>' + think + 's</strong></li>' +
-                    '<li>Iteration: <strong>' + (rt/1000).toFixed(1) + 's + ' + think + 's = ' + iterDuration.toFixed(1) + 's</strong></li>' +
-                    '<li>RPS: <strong>' + compVU.toLocaleString() + ' ÷ ' + iterDuration.toFixed(1) + 's = ' + compRPS.toFixed(1) + ' RPS</strong></li>';
+                if (currentMode === 'endToEnd') {
+                    // End-to-End Mode display
+                    document.getElementById('comprehensiveExample').innerHTML =
+                        '<li>VU: <strong>' + compVU.toLocaleString() + '</strong> | Session: <strong>' + sessionDur + 's</strong> | API Calls: <strong>' + apiCalls + '</strong></li>' +
+                        '<li>Total Requests: <strong>' + compVU.toLocaleString() + ' × ' + apiCalls + ' = ' + (compVU * apiCalls).toLocaleString() + ' requests</strong></li>' +
+                        '<li>RPS: <strong>(' + compVU.toLocaleString() + ' × ' + apiCalls + ') ÷ ' + sessionDur + 's = ' + compRPS.toFixed(1) + ' RPS</strong></li>';
+                } else {
+                    // Single API Mode display
+                    document.getElementById('comprehensiveExample').innerHTML =
+                        '<li>VU: <strong>' + compVU.toLocaleString() + '</strong> | RT: <strong>' + rt + 'ms</strong> | Think: <strong>' + think + 's</strong></li>' +
+                        '<li>Iteration: <strong>' + (rt/1000).toFixed(1) + 's + ' + think + 's = ' + iterDuration.toFixed(1) + 's</strong></li>' +
+                        '<li>RPS: <strong>' + compVU.toLocaleString() + ' ÷ ' + iterDuration.toFixed(1) + 's = ' + compRPS.toFixed(1) + ' RPS</strong></li>';
+                }
             }
             
             // Load Testing example  
