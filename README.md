@@ -187,7 +187,7 @@ Calculation dengan Input Anda:
 - ✅ Safari 14+
 
 ### File Size
-- Single HTML file: ~150 KB
+- Single HTML file: ~235 KB
 - No external dependencies
 - Offline-ready (standalone file)
 
@@ -201,12 +201,9 @@ Calculation dengan Input Anda:
 ## 📁 File Structure
 
 ```
-performance-testing-calculator/
-├── performance_calculator_final.html   # Main calculator (standalone)
-├── README.md                          # This file
-├── VERSION.md                         # Version history
-├── CHANGELOG.md                       # Detailed changelog
-└── COMMIT_MESSAGE.md                  # Commit template
+performance-test-calculator/
+├── index.html    # Main calculator (standalone)
+└── README.md     # This file
 ```
 
 ---
@@ -225,7 +222,7 @@ performance-testing-calculator/
 - Real-time calculation updates
 - Number formatting with locale support
 
-[See full changelog →](CHANGELOG.md)
+<!-- Changelog file not included in this repo; see git history for changes. -->
 
 ---
 
@@ -320,7 +317,7 @@ Internal tool untuk QA Performance Testing team.
 ## 👥 Credits
 
 **Developed by:** QA Performance Testing Team  
-**For:** Badan Gizi Nasional Performance Testing  
+**For:** a government client's performance testing  
 **Version:** 2.0.0  
 **Last Updated:** January 18, 2026
 
@@ -368,4 +365,4 @@ Internal tool untuk QA Performance Testing team.
 
 ---
 
-**Ready to calculate? Open `performance_calculator_final.html` in your browser and start planning your load tests! 🚀**
+**Ready to calculate? Open `index.html` in your browser and start planning your load tests! 🚀**
